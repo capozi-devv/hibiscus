@@ -4,7 +4,9 @@
   "version": "${version}",
   "name": "hibiscus",
   "description": "gay mason's decor ",
-  "authors": [],
+  "authors": [
+    ""
+  ],
   "contact": {},
   "license": "unlicense",
   "icon": "assets/hibiscus/icon.png",
