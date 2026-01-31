@@ -1,4 +1,4 @@
-package com.everest.hibiscus.client.render;
+package com.everest.hibiscus.api.modules.rendering.world;
 
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.RenderLayer;
@@ -8,7 +8,6 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.RotationAxis;
 import net.minecraft.util.math.Vec3d;
-import org.joml.Matrix3f;
 import org.joml.Matrix4f;
 
 public class ChainRenderer {
@@ -33,7 +32,6 @@ public class ChainRenderer {
         matrices.multiply(RotationAxis.POSITIVE_Y.rotation((float) angle));
         matrices.multiply(RotationAxis.POSITIVE_Z.rotation((float) angle1));
         for (int i = 0; i < segments; i++) {
-            int frame = Math.min(i + 1, 10);
             Vec3d vec = new Vec3d(0.48, 0, 0);
 
             if (i % 2 == 0) {

@@ -1,6 +1,5 @@
-package com.everest.hibiscus.math;
+package com.everest.hibiscus.api.modules.util;
 
-import net.minecraft.util.math.Vec3d;
 import org.joml.Vector3f;
 
 import java.util.List;

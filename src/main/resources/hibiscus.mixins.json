@@ -1,12 +1,17 @@
 {
   "required": true,
   "minVersion": "0.8",
+  "plugin": "com.everest.hibiscus.mixin.api.internal.ConditionalMixinPlugin",
   "package": "com.everest.hibiscus.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "api.text.TextMixin"
   ],
   "client": [
-    "ChestEntityRendererMixin"
+    "ChestEntityRendererMixin",
+    "api.gui.ItemRendererMixin",
+    "api.text.DrawContextMixin",
+    "api.text.ScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1

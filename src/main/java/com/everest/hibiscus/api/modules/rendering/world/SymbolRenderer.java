@@ -1,6 +1,6 @@
-package com.everest.hibiscus.client.render;
+package com.everest.hibiscus.api.modules.rendering.world;
 
-import com.everest.hibiscus.client.render.util.RenderOptions;
+import com.everest.hibiscus.api.modules.rendering.util.WorldRenderOptions;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.RenderLayer;
@@ -12,7 +12,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RotationAxis;
 
 public class SymbolRenderer {
-    public static void render(MatrixStack matrices, VertexConsumerProvider provider, Identifier texture, float xCenter, float y, float zCenter, RenderOptions options) {
+    public static void render(MatrixStack matrices, VertexConsumerProvider provider, Identifier texture, float xCenter, float y, float zCenter, WorldRenderOptions options) {
 
         matrices.push();
 
@@ -25,12 +25,12 @@ public class SymbolRenderer {
         float time = MinecraftClient.getInstance().world.getTime()
                 + MinecraftClient.getInstance().getRenderTickCounter().getTickDelta(false);
 
-        if (options.animation == RenderOptions.AnimationStyle.SPIN) {
+        if (options.animation == WorldRenderOptions.AnimationStyle.SPIN) {
             matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(time * 4f * options.animationSpeed));
         }
 
         float wobbleOffset = 0f;
-        if (options.animation == RenderOptions.AnimationStyle.WOBBLE) {
+        if (options.animation == WorldRenderOptions.AnimationStyle.WOBBLE) {
             wobbleOffset = (float) Math.sin(time * 0.15f * options.animationSpeed) * 0.2f * options.size;
         }
 
@@ -39,7 +39,7 @@ public class SymbolRenderer {
             alpha = MathHelper.clamp(time / options.fadeInTicks * 255f, 0f, alpha);
         if (options.fadeOutTicks > 0)
             alpha = MathHelper.clamp((options.fadeOutTicks - (time % options.fadeOutTicks)) / options.fadeOutTicks * 255f, 0f, alpha);
-        if (options.animation == RenderOptions.AnimationStyle.PULSE) {
+        if (options.animation == WorldRenderOptions.AnimationStyle.PULSE) {
             float pulse = (MathHelper.sin(time * 0.1f * options.animationSpeed) * 0.5f + 0.5f);
             alpha *= pulse;
         }

@@ -11,7 +11,7 @@
   "environment": "*",
   "entrypoints": {
     "client": [
-      "com.everest.hibiscus.client.HibiscusClient"
+      "com.everest.hibiscus.HibiscusClient"
     ],
     "main": [
       "com.everest.hibiscus.Hibiscus"

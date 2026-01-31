@@ -1,4 +1,4 @@
-package com.everest.hibiscus.client;
+package com.everest.hibiscus;
 
 import net.fabricmc.api.ClientModInitializer;
 

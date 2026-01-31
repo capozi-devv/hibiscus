@@ -1,4 +1,4 @@
-package com.everest.hibiscus.client.render;
+package com.everest.hibiscus.api.modules.rendering.world;
 
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.RenderLayer;
@@ -9,7 +9,7 @@ import net.minecraft.util.math.RotationAxis;
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
 
-public class LightBeamRenderer {
+public class SpotLightBeamRenderer {
     @SuppressWarnings("ALL")
     public static void render(MatrixStack matrices, VertexConsumerProvider vertexConsumers, float bottomSize, float topSize, Vector3f startPos, Vector3f endPos, float bottomAlpha, float topAlpha, Vector3f color) {
         VertexConsumer buffer = vertexConsumers.getBuffer(RenderLayer.getLightning());
