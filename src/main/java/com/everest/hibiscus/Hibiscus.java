@@ -1,5 +1,6 @@
 package com.everest.hibiscus;
 
+import com.everest.hibiscus.api.modules.compat.annotation.RequiresMod;
 import com.everest.hibiscus.api.modules.rendering.text.HibiscusPresetEffects;
 import com.everest.hibiscus.test.TestItems;
 import net.fabricmc.api.ModInitializer;
@@ -12,6 +13,13 @@ public class Hibiscus implements ModInitializer {
     public void onInitialize() {
         TestItems.initialize();
         HibiscusPresetEffects.init();
+
+        say();
+    }
+
+    @RequiresMod(mod = "carved", policy = RequiresMod.Policy.ALL)
+    public static void say() {
+        System.out.println("asd");
     }
 
     public static Identifier id(String s) {

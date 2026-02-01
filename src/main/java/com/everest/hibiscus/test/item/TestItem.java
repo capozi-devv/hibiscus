@@ -7,6 +7,8 @@ import com.everest.hibiscus.api.modules.rendering.text.TextEffects;
 import com.everest.hibiscus.api.modules.rendering.text.registry.TextEffectManager;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.text.MutableText;
+import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -17,11 +19,17 @@ public class TestItem extends Item implements VariableTexture {
 
     @Override
     public Text getName(ItemStack stack) {
-        return TextEffects.withEffect(
-                Text.literal("Test Item"),
-                HibiscusPresetEffects.WAVE_EFFECT,
-                TextEffectManager.getEffect(HibiscusPresetEffects.WAVE_EFFECT)
+        MutableText text = Text.literal("Test Item");
+
+        Style currentStyle = text.getStyle();
+        Style withFont = currentStyle.withFont(Hibiscus.id("distorted"));
+        Style withEffect = TextEffectManager.withEffect(withFont,
+                HibiscusPresetEffects.LERP_WAVE_EFFECT,
+                TextEffectManager.getEffect(HibiscusPresetEffects.LERP_WAVE_EFFECT)
         );
+
+        text.setStyle(withEffect);
+        return text;
     }
 
     @Override

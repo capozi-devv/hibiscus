@@ -1,22 +1,21 @@
 package com.everest.hibiscus.api.modules.rendering.text.effects;
 
-import com.everest.hibiscus.Hibiscus;
 import com.everest.hibiscus.api.modules.rendering.text.registry.TextEffect;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.text.OrderedText;
 import org.joml.Matrix4f;
 
-public class WaveEffect implements TextEffect {
+public class PixelWaveEffect implements TextEffect {
     private final float speed;
     private final float amplitude;
     private final float spacing;
 
-    public WaveEffect() {
+    public PixelWaveEffect() {
         this(0.15f, 2.0f, 0.6f);
     }
 
-    public WaveEffect(float speed, float amplitude, float spacing) {
+    public PixelWaveEffect(float speed, float amplitude, float spacing) {
         this.speed = speed;
         this.amplitude = amplitude;
         this.spacing = spacing;

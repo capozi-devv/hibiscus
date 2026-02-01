@@ -21,10 +21,11 @@ public class ChestEntityRendererMixin {
     )
     private void test(BlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay, CallbackInfo ci) {
         if (entity instanceof ChestBlockEntity chest) {
-            WorldRenderOptions o = new WorldRenderOptions()
-                    .size(3f)
-                    .animation(WorldRenderOptions.AnimationStyle.WOBBLE, 0.8f);
-            SkyBeamRenderer.render(matrices, vertexConsumers, Identifier.of("moew", "nmew"), 270, 300, o);
+//            WorldRenderOptions o = new WorldRenderOptions()
+//                    .size(3f)
+//                    .uvScroll(0.02f)
+//                    .animation(WorldRenderOptions.AnimationStyle.NONE, 0.8f);
+//            SkyBeamRenderer.render(matrices, vertexConsumers, Identifier.of("moew", "nmew"), 270, 300, o);
         }
     }
 }
