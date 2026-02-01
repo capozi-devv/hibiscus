@@ -20,14 +20,12 @@ public class TestItem extends Item implements VariableTexture {
     @Override
     public Text getName(ItemStack stack) {
         MutableText text = Text.literal("Test Item");
-
         Style currentStyle = text.getStyle();
         Style withFont = currentStyle.withFont(Hibiscus.id("distorted"));
         Style withEffect = TextEffectManager.withEffect(withFont,
-                HibiscusPresetEffects.LERP_WAVE_EFFECT,
-                TextEffectManager.getEffect(HibiscusPresetEffects.LERP_WAVE_EFFECT)
+                HibiscusPresetEffects.DOUBLE_LERP_WAVE_EFFECT,
+                TextEffectManager.getEffect(HibiscusPresetEffects.DOUBLE_LERP_WAVE_EFFECT)
         );
-
         text.setStyle(withEffect);
         return text;
     }
