@@ -23,8 +23,8 @@ public class TestItem extends Item implements VariableTexture {
         Style currentStyle = text.getStyle();
         Style withFont = currentStyle.withFont(Hibiscus.id("distorted"));
         Style withEffect = TextEffectManager.withEffect(withFont,
-                HibiscusPresetEffects.DOUBLE_LERP_WAVE_EFFECT,
-                TextEffectManager.getEffect(HibiscusPresetEffects.DOUBLE_LERP_WAVE_EFFECT)
+                HibiscusPresetEffects.TYPEWRITER_EFFECT,
+                TextEffectManager.getEffect(HibiscusPresetEffects.TYPEWRITER_EFFECT)
         );
         text.setStyle(withEffect);
         return text;

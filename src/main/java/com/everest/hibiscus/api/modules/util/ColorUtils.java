@@ -3,7 +3,6 @@ package com.everest.hibiscus.api.modules.util;
 import java.awt.*;
 
 public class ColorUtils {
-
     // Convert RGB (0–255) to Hex
     public static String rgbToHex(int r, int g, int b) {
         return String.format(

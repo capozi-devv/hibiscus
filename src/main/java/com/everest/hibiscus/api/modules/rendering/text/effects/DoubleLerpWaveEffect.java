@@ -23,13 +23,11 @@ public class DoubleLerpWaveEffect implements TextEffect {
     @Override
     public int render(TextRenderer textRenderer, OrderedText text, float x, float y, int color, boolean shadow, Matrix4f matrix, VertexConsumerProvider vertexConsumers, TextRenderer.TextLayerType layerType, int backgroundColor, int light) {
         float time = (System.currentTimeMillis() % 1_000_000L) / 50f;
-
         final float[] cursor = {0f};
 
         text.accept((index, style, codePoint) -> {
             String ch = new String(Character.toChars(codePoint));
             float charWidth = textRenderer.getWidth(ch);
-
             float wobble = (float) Math.sin(time * speed + index * spacing) * amplitude;
             float backgroundWobble = (float) Math.sin(time * speed + (index - 5) * spacing) * amplitude;
             int drawColor = style.getColor() != null ? style.getColor().getRgb() : color;
@@ -40,8 +38,6 @@ public class DoubleLerpWaveEffect implements TextEffect {
             matrix.translate(cursor[0], backgroundWobble, 0f);
             textRenderer.draw(ch, x, y, backgroundDrawColor, shadow, matrix, vertexConsumers, layerType, backgroundColor, light);
             matrix.translate(-cursor[0], -backgroundWobble, 0f);
-
-
             cursor[0] += charWidth;
             return true;
         });

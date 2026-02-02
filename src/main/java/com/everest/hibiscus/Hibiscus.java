@@ -4,7 +4,10 @@ import com.everest.hibiscus.api.modules.compat.annotation.RequiresMod;
 import com.everest.hibiscus.api.modules.rendering.text.HibiscusPresetEffects;
 import com.everest.hibiscus.test.TestItems;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.gen.structure.StructureType;
 
 public class Hibiscus implements ModInitializer {
     public static final String MODID = "hibiscus";
